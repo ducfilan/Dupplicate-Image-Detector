@@ -9,5 +9,6 @@ namespace Epub3DuplicatedImagesRemoverTool.Model
         public string XhtmlFileContent { get; set; }
         public string BelongFolderPath { get; set; }
         public string DuplicatedFileName { get; set; }
+        public float DifferencePercentage { get; set; }
     }
 }

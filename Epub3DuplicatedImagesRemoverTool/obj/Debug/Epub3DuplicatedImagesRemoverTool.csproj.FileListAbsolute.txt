@@ -16,3 +16,13 @@ C:\Users\Duc Filan\Documents\Visual Studio 2013\Projects\Epub3DuplicatedImagesRe
 C:\Users\Duc Filan\Documents\Visual Studio 2013\Projects\Epub3DuplicatedImagesRemoverTool\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.FormMain.resources
 C:\Users\Duc Filan\Documents\Visual Studio 2013\Projects\Epub3DuplicatedImagesRemoverTool\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.Properties.Resources.resources
 C:\Users\Duc Filan\Documents\Visual Studio 2013\Projects\Epub3DuplicatedImagesRemoverTool\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.csproj.GenerateResource.Cache
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.csprojAssemblyReference.cache
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.FormMain.resources
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.Properties.Resources.resources
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.csproj.GenerateResource.cache
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.csproj.CoreCompileInputs.cache
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.exe
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\obj\Debug\Epub3DuplicatedImagesRemoverTool.pdb
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\bin\Debug\Epub3DuplicatedImagesRemoverTool.exe.config
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\bin\Debug\Epub3DuplicatedImagesRemoverTool.exe
+C:\Users\1465\Desktop\Dupplicate-Image-Detector-master\Epub3DuplicatedImagesRemoverTool\bin\Debug\Epub3DuplicatedImagesRemoverTool.pdb
