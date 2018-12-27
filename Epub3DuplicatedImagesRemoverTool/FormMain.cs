@@ -154,10 +154,11 @@ namespace Epub3DuplicatedImagesRemoverTool
 
                 foreach (var targetImageFile in targetImageFiles)
                 {
-                    var difference_percent = ImageTool.GetPercentageDifference(baseImageFile, targetImageFile) * 100;
-                    var threshold_percent = int.Parse(txtTab3Threshold.Text);
+                    var threshold = byte.Parse(txtTab3Threshold.Text);
+                    var acceptableDiff_percent = float.Parse(txtTab3AcceptableDiff_percent.Text);
+                    var difference_percent = ImageTool.GetPercentageDifference(baseImageFile, targetImageFile, threshold) * 100;
 
-                    if (difference_percent > threshold_percent) continue;
+                    if (difference_percent > acceptableDiff_percent) continue;
 
                     isFound = true;
 
@@ -262,13 +263,14 @@ namespace Epub3DuplicatedImagesRemoverTool
 
         private void LoadSavedTextboxes()
         {
-            txtFolderPath.Text    = Properties.Settings.Default.FolderPath;
-            txtTab3BaseFolder.Text   = Properties.Settings.Default.Tab3FolderPath1;
-            txtTab3TargetFolder.Text   = Properties.Settings.Default.Tab3FolderPath2;
-            txtImage1Path.Text    = Properties.Settings.Default.Image1Path;
-            txtImage2Path.Text    = Properties.Settings.Default.Image2Path;
-            txtThreshold.Text     = Properties.Settings.Default.Threshold.Equals(string.Empty) ? "5" : Properties.Settings.Default.Threshold;
-            txtTab3Threshold.Text = Properties.Settings.Default.Tab3Threshold.Equals(string.Empty) ? "5" : Properties.Settings.Default.Tab3Threshold;
+            txtFolderPath.Text                 = Properties.Settings.Default.FolderPath;
+            txtTab3BaseFolder.Text             = Properties.Settings.Default.Tab3FolderPath1;
+            txtTab3TargetFolder.Text           = Properties.Settings.Default.Tab3FolderPath2;
+            txtImage1Path.Text                 = Properties.Settings.Default.Image1Path;
+            txtImage2Path.Text                 = Properties.Settings.Default.Image2Path;
+            txtThreshold.Text                  = Properties.Settings.Default.Threshold.Equals(string.Empty) ? "5" : Properties.Settings.Default.Threshold;
+            txtTab3AcceptableDiff_percent.Text = Properties.Settings.Default.Tab3AcceptableDiff.Equals(string.Empty) ? "20" : Properties.Settings.Default.Tab3AcceptableDiff;
+            txtTab3Threshold.Text              = Properties.Settings.Default.Tab3Threshold.Equals(string.Empty) ? "5" : Properties.Settings.Default.Tab3Threshold;
         }
 
         private void InitializeBackgroundWorkers()
@@ -384,11 +386,6 @@ namespace Epub3DuplicatedImagesRemoverTool
             Properties.Settings.Default.Save();
         }
 
-        private void txtThreshold_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
         private void btnReplace_Click(object sender, EventArgs e)
         {
             btnReplace.Enabled = false;
@@ -434,7 +431,13 @@ namespace Epub3DuplicatedImagesRemoverTool
             Properties.Settings.Default.Save();
         }
 
-        private void txtTab3Threshold_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTab3AcceptableDiff_percent_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Tab3AcceptableDiff = txtTab3AcceptableDiff_percent.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }

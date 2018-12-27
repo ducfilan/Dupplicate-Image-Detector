@@ -106,5 +106,17 @@ namespace Epub3DuplicatedImagesRemoverTool.Properties {
                 this["Tab3Threshold"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Tab3AcceptableDiff {
+            get {
+                return ((string)(this["Tab3AcceptableDiff"]));
+            }
+            set {
+                this["Tab3AcceptableDiff"] = value;
+            }
+        }
     }
 }

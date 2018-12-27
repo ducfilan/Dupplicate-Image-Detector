@@ -74,6 +74,10 @@
             this.txtImage1Path = new System.Windows.Forms.TextBox();
             this.btnBrowseImage1 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtTab3Threshold = new System.Windows.Forms.TextBox();
+            this.btnTab3CopyDupFilesFolder2 = new System.Windows.Forms.Button();
+            this.btnTab3CopyDupFilesFolder1 = new System.Windows.Forms.Button();
             this.gridTab3Images = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -88,13 +92,11 @@
             this.btnTab3BrowsePathFolder2 = new System.Windows.Forms.Button();
             this.btnTab3Perform = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTab3Threshold = new System.Windows.Forms.TextBox();
+            this.txtTab3AcceptableDiff_percent = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTab3BaseFolder = new System.Windows.Forms.TextBox();
             this.btnTab3BrowsePathFolder1 = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btnTab3CopyDupFilesFolder1 = new System.Windows.Forms.Button();
-            this.btnTab3CopyDupFilesFolder2 = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -235,7 +237,7 @@
             this.txtThreshold.Size = new System.Drawing.Size(579, 19);
             this.txtThreshold.TabIndex = 9;
             this.txtThreshold.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtThreshold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThreshold_KeyPress);
+            this.txtThreshold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // lnkCheckNone
             // 
@@ -531,6 +533,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.txtTab3Threshold);
             this.tabPage3.Controls.Add(this.btnTab3CopyDupFilesFolder2);
             this.tabPage3.Controls.Add(this.btnTab3CopyDupFilesFolder1);
             this.tabPage3.Controls.Add(this.gridTab3Images);
@@ -539,7 +543,7 @@
             this.tabPage3.Controls.Add(this.btnTab3BrowsePathFolder2);
             this.tabPage3.Controls.Add(this.btnTab3Perform);
             this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.txtTab3Threshold);
+            this.tabPage3.Controls.Add(this.txtTab3AcceptableDiff_percent);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.txtTab3BaseFolder);
             this.tabPage3.Controls.Add(this.btnTab3BrowsePathFolder1);
@@ -549,6 +553,55 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Find duplicated files in 2 folders";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(397, 62);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 12);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Threshold";
+            // 
+            // txtTab3Threshold
+            // 
+            this.txtTab3Threshold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTab3Threshold.Location = new System.Drawing.Point(458, 59);
+            this.txtTab3Threshold.Name = "txtTab3Threshold";
+            this.txtTab3Threshold.Size = new System.Drawing.Size(212, 19);
+            this.txtTab3Threshold.TabIndex = 27;
+            this.txtTab3Threshold.Text = "3";
+            this.txtTab3Threshold.TextChanged += new System.EventHandler(this.txtTab3Threshold_TextChanged);
+            this.txtTab3Threshold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            // 
+            // btnTab3CopyDupFilesFolder2
+            // 
+            this.btnTab3CopyDupFilesFolder2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTab3CopyDupFilesFolder2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTab3CopyDupFilesFolder2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTab3CopyDupFilesFolder2.ForeColor = System.Drawing.Color.White;
+            this.btnTab3CopyDupFilesFolder2.Location = new System.Drawing.Point(418, 485);
+            this.btnTab3CopyDupFilesFolder2.Name = "btnTab3CopyDupFilesFolder2";
+            this.btnTab3CopyDupFilesFolder2.Size = new System.Drawing.Size(403, 46);
+            this.btnTab3CopyDupFilesFolder2.TabIndex = 25;
+            this.btnTab3CopyDupFilesFolder2.Text = "Copy dupplicated files from folder 2";
+            this.btnTab3CopyDupFilesFolder2.UseVisualStyleBackColor = false;
+            this.btnTab3CopyDupFilesFolder2.Click += new System.EventHandler(this.btnTab3CopyDupFilesFolder2_Click);
+            // 
+            // btnTab3CopyDupFilesFolder1
+            // 
+            this.btnTab3CopyDupFilesFolder1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTab3CopyDupFilesFolder1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTab3CopyDupFilesFolder1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTab3CopyDupFilesFolder1.ForeColor = System.Drawing.Color.White;
+            this.btnTab3CopyDupFilesFolder1.Location = new System.Drawing.Point(7, 485);
+            this.btnTab3CopyDupFilesFolder1.Name = "btnTab3CopyDupFilesFolder1";
+            this.btnTab3CopyDupFilesFolder1.Size = new System.Drawing.Size(403, 46);
+            this.btnTab3CopyDupFilesFolder1.TabIndex = 24;
+            this.btnTab3CopyDupFilesFolder1.Text = "Copy dupplicated files from folder 1";
+            this.btnTab3CopyDupFilesFolder1.UseVisualStyleBackColor = false;
+            this.btnTab3CopyDupFilesFolder1.Click += new System.EventHandler(this.btnTab3CopyDupFilesFolder1_Click);
             // 
             // gridTab3Images
             // 
@@ -649,7 +702,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 36);
+            this.label9.Location = new System.Drawing.Point(34, 36);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 12);
             this.label9.TabIndex = 20;
@@ -659,9 +712,9 @@
             // 
             this.txtTab3TargetFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTab3TargetFolder.Location = new System.Drawing.Point(87, 33);
+            this.txtTab3TargetFolder.Location = new System.Drawing.Point(114, 33);
             this.txtTab3TargetFolder.Name = "txtTab3TargetFolder";
-            this.txtTab3TargetFolder.Size = new System.Drawing.Size(502, 19);
+            this.txtTab3TargetFolder.Size = new System.Drawing.Size(475, 19);
             this.txtTab3TargetFolder.TabIndex = 21;
             // 
             // btnTab3BrowsePathFolder2
@@ -683,7 +736,7 @@
             this.btnTab3Perform.ForeColor = System.Drawing.Color.White;
             this.btnTab3Perform.Location = new System.Drawing.Point(676, 7);
             this.btnTab3Perform.Name = "btnTab3Perform";
-            this.btnTab3Perform.Size = new System.Drawing.Size(145, 70);
+            this.btnTab3Perform.Size = new System.Drawing.Size(145, 71);
             this.btnTab3Perform.TabIndex = 19;
             this.btnTab3Perform.Text = "FIND";
             this.btnTab3Perform.UseVisualStyleBackColor = false;
@@ -694,25 +747,23 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(7, 62);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 12);
+            this.label7.Size = new System.Drawing.Size(101, 12);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Threshold";
+            this.label7.Text = "Acceptable diff (%)";
             // 
-            // txtTab3Threshold
+            // txtTab3AcceptableDiff_percent
             // 
-            this.txtTab3Threshold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTab3Threshold.Location = new System.Drawing.Point(87, 59);
-            this.txtTab3Threshold.Name = "txtTab3Threshold";
-            this.txtTab3Threshold.Size = new System.Drawing.Size(583, 19);
-            this.txtTab3Threshold.TabIndex = 18;
-            this.txtTab3Threshold.TextChanged += new System.EventHandler(this.txtTab3Threshold_TextChanged);
-            this.txtTab3Threshold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTab3Threshold_KeyPress);
+            this.txtTab3AcceptableDiff_percent.Location = new System.Drawing.Point(114, 59);
+            this.txtTab3AcceptableDiff_percent.Name = "txtTab3AcceptableDiff_percent";
+            this.txtTab3AcceptableDiff_percent.Size = new System.Drawing.Size(212, 19);
+            this.txtTab3AcceptableDiff_percent.TabIndex = 18;
+            this.txtTab3AcceptableDiff_percent.TextChanged += new System.EventHandler(this.txtTab3AcceptableDiff_percent_TextChanged);
+            this.txtTab3AcceptableDiff_percent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 11);
+            this.label8.Location = new System.Drawing.Point(41, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 12);
             this.label8.TabIndex = 14;
@@ -722,9 +773,9 @@
             // 
             this.txtTab3BaseFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTab3BaseFolder.Location = new System.Drawing.Point(87, 8);
+            this.txtTab3BaseFolder.Location = new System.Drawing.Point(114, 8);
             this.txtTab3BaseFolder.Name = "txtTab3BaseFolder";
-            this.txtTab3BaseFolder.Size = new System.Drawing.Size(502, 19);
+            this.txtTab3BaseFolder.Size = new System.Drawing.Size(475, 19);
             this.txtTab3BaseFolder.TabIndex = 15;
             // 
             // btnTab3BrowsePathFolder1
@@ -741,34 +792,6 @@
             // openFileDialog
             // 
             this.openFileDialog.Filter = "Image files|*.jpg;*.png;*.bmp;*.gif";
-            // 
-            // btnTab3CopyDupFilesFolder1
-            // 
-            this.btnTab3CopyDupFilesFolder1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTab3CopyDupFilesFolder1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnTab3CopyDupFilesFolder1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTab3CopyDupFilesFolder1.ForeColor = System.Drawing.Color.White;
-            this.btnTab3CopyDupFilesFolder1.Location = new System.Drawing.Point(7, 485);
-            this.btnTab3CopyDupFilesFolder1.Name = "btnTab3CopyDupFilesFolder1";
-            this.btnTab3CopyDupFilesFolder1.Size = new System.Drawing.Size(403, 46);
-            this.btnTab3CopyDupFilesFolder1.TabIndex = 24;
-            this.btnTab3CopyDupFilesFolder1.Text = "Copy dupplicated files from folder 1";
-            this.btnTab3CopyDupFilesFolder1.UseVisualStyleBackColor = false;
-            this.btnTab3CopyDupFilesFolder1.Click += new System.EventHandler(this.btnTab3CopyDupFilesFolder1_Click);
-            // 
-            // btnTab3CopyDupFilesFolder2
-            // 
-            this.btnTab3CopyDupFilesFolder2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTab3CopyDupFilesFolder2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnTab3CopyDupFilesFolder2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTab3CopyDupFilesFolder2.ForeColor = System.Drawing.Color.White;
-            this.btnTab3CopyDupFilesFolder2.Location = new System.Drawing.Point(418, 485);
-            this.btnTab3CopyDupFilesFolder2.Name = "btnTab3CopyDupFilesFolder2";
-            this.btnTab3CopyDupFilesFolder2.Size = new System.Drawing.Size(403, 46);
-            this.btnTab3CopyDupFilesFolder2.TabIndex = 25;
-            this.btnTab3CopyDupFilesFolder2.Text = "Copy dupplicated files from folder 2";
-            this.btnTab3CopyDupFilesFolder2.UseVisualStyleBackColor = false;
-            this.btnTab3CopyDupFilesFolder2.Click += new System.EventHandler(this.btnTab3CopyDupFilesFolder2_Click);
             // 
             // FormMain
             // 
@@ -858,12 +881,14 @@
         private System.Windows.Forms.Button btnTab3BrowsePathFolder2;
         private System.Windows.Forms.Button btnTab3Perform;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTab3Threshold;
+        private System.Windows.Forms.TextBox txtTab3AcceptableDiff_percent;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTab3BaseFolder;
         private System.Windows.Forms.Button btnTab3BrowsePathFolder1;
         private System.Windows.Forms.Button btnTab3CopyDupFilesFolder1;
         private System.Windows.Forms.Button btnTab3CopyDupFilesFolder2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtTab3Threshold;
     }
 }
 
